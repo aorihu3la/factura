@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Factura {
+-String idFactura
+-String idCliente
+-Date fecha
+-Double calcular()
+-String verFactura()
+}
+class ItemFactura{
+-String idFactura
+-String idProducto
+-Double cantidad
+-Double calcularSubotal()
+}
+class Producto{
+-String idProducto
+-String nombre
+-Double precio
+}
+class Cliente{
+-String idCliente
+- String nombre
+- String direccion
+- String telefono
+
+}
+Cliente <-- Factura
+Factura <|-- ItemFactura
+ItemFactura --> Producto
+
+@enduml
